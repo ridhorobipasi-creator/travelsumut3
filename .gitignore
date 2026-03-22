@@ -14,12 +14,12 @@
 /auth.json
 /bootstrap/ssr
 /node_modules
-/public/build
+# /public/build (included for Vercel deployment)
 /public/hot
 /public/storage
 /storage/*.key
 /storage/pail
-/vendor
+# /vendor (included for Vercel PHP deployment)
 Homestead.json
 Homestead.yaml
 Thumbs.db

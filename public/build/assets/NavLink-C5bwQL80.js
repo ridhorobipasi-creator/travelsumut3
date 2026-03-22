@@ -1,0 +1,1 @@
+import{r as c,v as m,j as p,L as u,b as x}from"./app-DbQXV-HK.js";const N=c.forwardRef(({href:s,className:a,activeClassName:t,children:r,...e},n)=>{const{url:o}=m(),i=o===s;return p.jsx(u,{ref:n,href:s,className:x(a,i&&t),...e,children:r})});N.displayName="NavLink";export{N};
