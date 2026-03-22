@@ -23,6 +23,7 @@
   ],
   "env": {
     "APP_KEY": "base64:xNDWv+P32B6oMhR3C4DkL5aP8mQ2rU9vTzWjY6eK1cU=",
+    "APP_URL": "https://travelsumut3.vercel.app",
     "APP_ENV": "production",
     "APP_DEBUG": "false",
     "LOG_CHANNEL": "stderr",
