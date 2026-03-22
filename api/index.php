@@ -26,8 +26,15 @@ foreach ($tmpDirs as $dir) {
         mkdir($dir, 0777, true);
     }
 }
+
+// Setup SQLite database for Vercel Serverless environment
 if (!file_exists('/tmp/database.sqlite')) {
-    touch('/tmp/database.sqlite');
+    $localDb = __DIR__.'/../database/database.sqlite';
+    if (file_exists($localDb)) {
+        copy($localDb, '/tmp/database.sqlite');
+    } else {
+        touch('/tmp/database.sqlite');
+    }
 }
 
 // Instruct Laravel to use the compiled views path in /tmp via env before it boots
