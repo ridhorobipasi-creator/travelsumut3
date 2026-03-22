@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    --background: 40 33% 98%;
+    --foreground: 200 25% 15%;
+
+    --card: 40 30% 97%;
+    --card-foreground: 200 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 15%;
+
+    --primary: 160 45% 32%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 25 80% 55%;
+    --secondary-foreground: 40 33% 98%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 200 10% 45%;
+
+    --accent: 195 70% 42%;
+    --accent-foreground: 40 33% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 33% 98%;
+
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 160 45% 32%;
+
+    --radius: 0.75rem;
+
+    --tropical-gold: 38 80% 60%;
+    --tropical-sand: 35 40% 90%;
+    --tropical-ocean: 195 70% 42%;
+    --tropical-sunset: 15 85% 58%;
+    --tropical-leaf: 160 45% 32%;
+    --tropical-sky: 200 60% 94%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(160 45% 32%), hsl(195 70% 42%));
+    --gradient-sunset: linear-gradient(135deg, hsl(25 80% 55%), hsl(15 85% 58%));
+    --gradient-ocean: linear-gradient(135deg, hsl(195 70% 42%), hsl(200 60% 55%));
+    --gradient-warm: linear-gradient(180deg, hsl(40 33% 98%), hsl(35 40% 90%));
+
+    --shadow-soft: 0 4px 20px -4px hsl(200 25% 15% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(200 25% 15% / 0.1);
+    --shadow-elevated: 0 16px 50px -12px hsl(200 25% 15% / 0.15);
+
+    --sidebar-background: 200 25% 12%;
+    --sidebar-foreground: 40 33% 95%;
+    --sidebar-primary: 160 45% 45%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 200 20% 18%;
+    --sidebar-accent-foreground: 40 33% 95%;
+    --sidebar-border: 200 15% 20%;
+    --sidebar-ring: 160 45% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+  .gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  .text-tropical-gold {
+    color: hsl(var(--tropical-gold));
+  }
+  .bg-tropical-sand {
+    background-color: hsl(var(--tropical-sand));
+  }
+  .bg-tropical-sky {
+    background-color: hsl(var(--tropical-sky));
+  }
+}
