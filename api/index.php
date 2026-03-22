@@ -1,24 +1,27 @@
 <?php
 
-// Bootstrap Laravel application for Vercel serverless
+use Illuminate\Foundation\Application;
+use Illuminate\Http\Request;
+
 define('LARAVEL_START', microtime(true));
 
-// Composer autoloader
-require __DIR__ . '/../vendor/autoload.php';
+// Maintenance mode
+if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
+    require $maintenance;
+}
 
-// Setup SQLite database directory for Vercel's /tmp
+// Composer autoloader
+require __DIR__.'/../vendor/autoload.php';
+
+// Setup SQLite database for Vercel Serverless environment
+if (!is_dir('/tmp')) {
+    mkdir('/tmp', 0777, true);
+}
 if (!file_exists('/tmp/database.sqlite')) {
     touch('/tmp/database.sqlite');
 }
 
-// Bootstrap the Laravel application
-$app = require_once __DIR__ . '/../bootstrap/app.php';
+// Bootstrap Laravel and handle the request
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
-// Handle the request
-$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
-)->send();
-
-$kernel->terminate($request, $response);
+$app->handleRequest(Request::capture());
