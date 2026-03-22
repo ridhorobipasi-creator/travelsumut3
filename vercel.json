@@ -1,6 +1,7 @@
 {
   "version": 2,
   "framework": null,
+  "buildCommand": "echo 'Skipping build, we already built the assets locally.'",
   "outputDirectory": "public",
   "functions": {
     "api/index.php": {
